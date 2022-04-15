@@ -1,4 +1,4 @@
-let numberOfFilms = prompt("How many movies have you already watched?", "");
+let numberOfFilms = +prompt("How many movies have you already watched?", ""); // тут добавил плюс, потому что ожидается ответ в числах
 
 
 let personalMovieDB = {
