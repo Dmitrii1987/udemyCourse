@@ -11,7 +11,8 @@ str.length - и получить её длину)
 
 'use strict';
 
-let numberOfFilms = +prompt("How many movies have you already watched?", ""); // тут добавил плюс, потому что ожидается ответ в числах
+let numberOfFilms = +prompt("How many movies have you already watched?", ""); // тут добавил плюс,
+//потому что ожидается ответ в числах
 
 
 let personalMovieDB = {
@@ -21,6 +22,16 @@ let personalMovieDB = {
     genres: [],
     privat: false
 };
+
+if (personalMovieDB.count < 10) {
+    alert("Very small amount of movies");
+} else {
+    if (personalMovieDB.count < 30) {
+        alert("You are the classical watcher");
+    } else {
+        alert("You are the cinemaman!");
+    }
+}
 
 let lastSeenMovie1 = prompt("What did you watch last time?", "");
 let evalOfLastMovie1 = prompt("How can you evaluate it?", "");
