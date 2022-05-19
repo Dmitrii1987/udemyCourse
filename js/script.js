@@ -23,22 +23,28 @@ let personalMovieDB = {
     privat: false
 };
 
-if (personalMovieDB.count < 10) {
-    alert("Very small amount of movies");
-} else {
-    if (personalMovieDB.count < 30) {
-        alert("You are the classical watcher");
+for (let i = 0; i < 2; i++) {
+    const a = prompt("What did you watch last time?", ""),
+          b = prompt("What is the evaluation of the film?", "");
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
     } else {
-        alert("You are the cinemaman!");
+        console.log('error');
+        i--;
     }
 }
 
-let lastSeenMovie1 = prompt("What did you watch last time?", "");
-let evalOfLastMovie1 = prompt("How can you evaluate it?", "");
-let lastSeenMovie2 = prompt("What did you watch last time?", "");
-let evalOfLastMovie2 = prompt("How can you evaluate it?", "");
+if (personalMovieDB.count < 10) {
+    alert("Very small amount of movies");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    alert("You are classical watcher");
+} else if (personalMovieDB.count >= 30) {
+    alert ("Yuo are the cinemaman!");
+} else {
+    console.log("Error");
+}
 
-personalMovieDB.movies[lastSeenMovie1] = evalOfLastMovie1;
-personalMovieDB.movies[lastSeenMovie2] = evalOfLastMovie2;
 
 console.log(personalMovieDB);
